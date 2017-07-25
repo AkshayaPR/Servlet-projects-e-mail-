@@ -8,7 +8,7 @@
 ```
 ```sh
     @WebServlet("/DeleteServlet")
----
+  
     public class DeleteServlet extends HttpServlet
      {  
         protected void doGet(HttpServletRequest request, HttpServletResponse response)   
