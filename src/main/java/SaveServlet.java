@@ -1,26 +1,18 @@
     import java.io.IOException;  
     import java.io.PrintWriter;  
-      
     import javax.servlet.ServletException;  
     import javax.servlet.annotation.WebServlet;  
     import javax.servlet.http.HttpServlet;  
     import javax.servlet.http.HttpServletRequest;  
     import javax.servlet.http.HttpServletResponse;  
-   
-
-import java.util.Properties;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-
-
-
-
+    import java.util.Properties;
+    import javax.mail.Message;
+    import javax.mail.MessagingException;
+    import javax.mail.PasswordAuthentication;
+    import javax.mail.Session;
+    import javax.mail.Transport;    
+    import javax.mail.internet.InternetAddress;
+    import javax.mail.internet.MimeMessage;
 
  @WebServlet("/SaveServlet")  
     public class SaveServlet extends HttpServlet {  
@@ -28,7 +20,6 @@ import javax.mail.internet.MimeMessage;
              throws ServletException, IOException {  
             response.setContentType("text/html");  
             PrintWriter out=response.getWriter();  
-              
             String name=request.getParameter("name");  
             String password=request.getParameter("password");  
             String email=request.getParameter("email");  
@@ -36,7 +27,7 @@ import javax.mail.internet.MimeMessage;
               
             Emp e=new Emp();  
             e.setName(name);  
-           e.setPassword(password);  
+            e.setPassword(password);  
             e.setEmail(email);  
             e.setCountry(country);  
               
@@ -45,17 +36,15 @@ import javax.mail.internet.MimeMessage;
             if(status>0){  
                 out.print("<p>Record saved successfully!</p>");  
                 request.getRequestDispatcher("index.html").include(request, response);  
-            }else{  
+            }
+            else{  
                 out.println("Sorry! unable to save record");  
-            }  
-              
+            }     
             out.close();  
-
- response.setContentType("text/html;charset=UTF-8");
-
+            
+response.setContentType("text/html;charset=UTF-8");
 String toMail = request.getParameter("email");
-
-
+            
 try {
 SaveServlet javaEmail = new SaveServlet();
 final String username = "akshaya.pr@kggroup.com";
@@ -71,12 +60,12 @@ protected PasswordAuthentication getPasswordAuthentication() {
 return new PasswordAuthentication(username, password1);
 }
 });
+    
 try {
 Message message = new MimeMessage(session);
 message.setFrom(new InternetAddress("akshaya.pr@kggroup.com"));
 message.setRecipients(Message.RecipientType.TO,
 InternetAddress.parse(toMail));
-
 message.setSubject("Event Registration Succesful");
 message.setContent("<h1>Hi "+name+"</h1><br><br><h2>Your Registration Is Succesful</h2>","text/html" );
 Transport.send(message);
@@ -86,7 +75,6 @@ catch (MessagingException e2)
 {
 throw new RuntimeException(e2);
 }
-
 //javaEmail.sendEmail(toMail);
 out.println("Process Completed\n");
 } catch (Exception e1) {
@@ -94,10 +82,6 @@ e1.printStackTrace();
 }
 out.println("event registered successfully");
 }
-
-
-
-
-        }  
+}  
       
     
