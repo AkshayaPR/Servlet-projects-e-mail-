@@ -1,0 +1,47 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head>     
+    </head>   
+    <style> 
+.center{
+    text-align:center;
+    border:rebeccapurple;
+    margin: auto;
+    right:0px;
+    }
+  body{
+        background-image: url("https://wallpaperscraft.com/image/shards_stone_background_light_85542_1920x1080.jpg");
+    }
+    th,h1{
+        color: deeppink;
+    }
+</style>
+ <body > 
+   <div class="center">
+   <h1>Add New Employee</h1>  
+   <div>
+   <form action="SaveServlet" method="post">  
+   <table>     
+   <th> Name    :<input type="text" name="name"/> </br></th>
+    <th>Password:<input type="password" name="password"/><br></th>
+    <th>Email   :<input type="email" name="email"/></br></th>
+    <th>Country :<select name="country" style="width:150px">  
+   <option>India</option>  
+   <option>USA</option>  
+   <option>UK</option>  
+   <option>Other</option>  
+   </select></th>
+   <pre>
+       <div>
+    <tr><th><input type="submit" value="Save Employee"/>  </tr></th>
+    </div>
+   </table>  
+   </form> 
+    <a href="ViewServlet">view employees</a>  
+
+   </pre>
+   <br/>  
+   </div>
+   </div>
+   </body>  
+   </html>  

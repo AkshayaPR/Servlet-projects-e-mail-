@@ -1,0 +1,68 @@
+    <!DOCTYPE html>  
+    <html>  
+    <head>     
+    </head>   
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+    <style> 
+
+  body{
+        background-image: url("https://wallpaperscraft.com/image/shards_stone_background_light_85542_1920x1080.jpg");
+    }
+    th,h1{
+        color: deeppink;
+    }
+    label{
+        color:white;
+     
+    }
+    .add{
+margin-left:150px;
+margin-top:100px;
+    }
+ a{
+     color:white;
+     
+ }  
+</style>
+ <body > 
+ <div class="container">
+     <div class="add">
+   <h1>Add New Employee</h1>  
+  
+
+   <form action="SaveServlet" method="post">  
+
+  <label>Name    : &nbsp; &nbsp; &nbsp; &nbsp;</label><input type="text" name="name"/> </br><br/>
+    
+    <label>Password:&nbsp;&nbsp;</label><input type="password" name="password"/><br><br/>
+    
+    <label>Email   :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="email" name="email"/></br><br/>
+    <label>Country :&nbsp;&nbsp;&nbsp;&nbsp;</label><select name="country" style="width:150px">  </br></br>
+   <option>India</option>  
+   <option>USA</option>  
+   <option>UK</option>  
+   <option>Other</option>  
+   </select>
+   </br>
+  
+       <div>
+ </br><button class="btn btn-success" type="submit">Save Employee</button> 
+    </div>
+
+   </form> 
+   </br>
+    </br><a href="ViewServlet">view employees</a>
+</div>
+
+
+   </div>
+   </body>  
+   </html>  
